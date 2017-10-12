@@ -1,0 +1,14 @@
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.Test.deps.json
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.Test.runtimeconfig.json
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.Test.runtimeconfig.dev.json
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.Test.dll
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.Test.pdb
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.dll
+D:\Source\MoqFixture\MoqFixture.Test\bin\Debug\netcoreapp1.1\MoqFixture.pdb
+D:\Source\MoqFixture\MoqFixture.Test\obj\Debug\netcoreapp1.1\MoqFixture.Test.csprojResolveAssemblyReference.cache
+D:\Source\MoqFixture\MoqFixture.Test\obj\Debug\netcoreapp1.1\MoqFixture.Test.AssemblyInfo.cs
+D:\Source\MoqFixture\MoqFixture.Test\obj\Debug\netcoreapp1.1\MoqFixture.Test.dll
+D:\Source\MoqFixture\MoqFixture.Test\obj\Debug\netcoreapp1.1\MoqFixture.Test.pdb

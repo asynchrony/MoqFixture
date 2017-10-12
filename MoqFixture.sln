@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqFixture", "MoqFixture\MoqFixture.csproj", "{EA1097E7-6873-404E-A439-7270399406AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqFixture.Test", "MoqFixture.Test\MoqFixture.Test.csproj", "{15EA2F93-03B9-4B18-B7A3-CF0F9E57054A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA1097E7-6873-404E-A439-7270399406AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1097E7-6873-404E-A439-7270399406AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1097E7-6873-404E-A439-7270399406AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1097E7-6873-404E-A439-7270399406AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15EA2F93-03B9-4B18-B7A3-CF0F9E57054A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15EA2F93-03B9-4B18-B7A3-CF0F9E57054A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15EA2F93-03B9-4B18-B7A3-CF0F9E57054A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15EA2F93-03B9-4B18-B7A3-CF0F9E57054A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
