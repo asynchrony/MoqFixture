@@ -1,7 +1,0 @@
-D:\Source\MoqFixture\MoqFixture\bin\Debug\netcoreapp1.1\MoqFixture.deps.json
-D:\Source\MoqFixture\MoqFixture\bin\Debug\netcoreapp1.1\MoqFixture.dll
-D:\Source\MoqFixture\MoqFixture\obj\Debug\netcoreapp1.1\MoqFixture.AssemblyInfo.cs
-D:\Source\MoqFixture\MoqFixture\bin\Debug\netcoreapp1.1\MoqFixture.pdb
-D:\Source\MoqFixture\MoqFixture\obj\Debug\netcoreapp1.1\MoqFixture.dll
-D:\Source\MoqFixture\MoqFixture\obj\Debug\netcoreapp1.1\MoqFixture.pdb
-D:\Source\MoqFixture\MoqFixture\obj\Debug\netcoreapp1.1\MoqFixture.csprojResolveAssemblyReference.cache

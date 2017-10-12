@@ -6,7 +6,7 @@ using Moq;
 
 namespace MoqFixture
 {
-    public class MoqFixture<T> : TheoryFixture where T : class
+    public class MoqFixture<T> where T : class
     {
         private Dictionary<string, Mock> _mocks;
         private readonly Type _testObjectType = typeof(T);

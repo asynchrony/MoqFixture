@@ -56,14 +56,6 @@ namespace MoqFixture.Test
             Assert.AreEqual(mockOne.Object, ValidType.dependencyOne);
             Assert.AreEqual(mockTwo.Object, ValidType.dependencyTwo);
         }
-
-        [TestMethod]
-        public void Inherits_From_Theory_Fixture()
-        {
-            var fixture = new ValidFixture();
-
-            Assert.IsInstanceOfType(fixture, typeof(TheoryFixture));
-        }
     }
 
     class ValidFixture : MoqFixture<ValidType>
