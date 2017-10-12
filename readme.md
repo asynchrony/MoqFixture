@@ -25,12 +25,12 @@ public class UserInfoControllerFixture : MoqFixture<UserInfoController>
             FullName = "tom thumb"
         };
 
-		//The magic bit
+	//The magic bit
         Mock<IUserService>() 
-			.Setup(x => x.ResolveCurrentUser())
-            .Returns(expectedUser);
+		.Setup(x => x.ResolveCurrentUser())
+		.Returns(expectedUser);
 
-		//TestObject is provided within the Fixture
+	//TestObject is provided within the Fixture
         UserInfoView result = TestObject.Get();
 
         Assert.That(result.UserName, Is.EqualTo(expectedUser.Username));
@@ -45,7 +45,7 @@ public class UserInfoController : ApiController
 {
     private readonly IUserService _userService;
 
-	//Automatically called and injected by MoqFixture
+    //Automatically called and injected by MoqFixture
     public UserInfoController(IUserService userService)
     {
         _userService = userService;
