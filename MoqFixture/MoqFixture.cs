@@ -8,7 +8,7 @@ namespace MoqFixture
 {
     public class MoqFixture<T> where T : class
     {
-        private Dictionary<string, Mock> _mocks;
+        private readonly Dictionary<string, Mock> _mocks;
         private readonly Type _testObjectType = typeof(T);
         private readonly ConstructorInfo _testObjectConstructor;
 
@@ -32,9 +32,7 @@ namespace MoqFixture
 
         protected Mock<TMock> Mock<TMock>() where TMock : class
         {
-            Mock mock;
-
-            if (_mocks.TryGetValue(typeof(TMock).FullName, out mock))
+            if (_mocks.TryGetValue(typeof(TMock).FullName, out var mock))
             {
                 return (Mock<TMock>)mock;
             }
@@ -51,7 +49,7 @@ namespace MoqFixture
                 {
                     throw new InvalidOperationException($"Constructor for {_testObjectType.Name} has duplicate dependency {argType.Name}.");
                 }
-                var mock = CreateMock(argType);
+                var mock = ResolveMock(argType);
                 _mocks.Add(argType.FullName, mock);
             }
         }
@@ -69,8 +67,14 @@ namespace MoqFixture
             }
         }
 
-        private Mock CreateMock(Type argType)
-        {
+        private Mock ResolveMock(Type argType)
+        {                        
+            var typeName = argType.FullName;
+            if (DefaultMocks.Mocks.TryGetValue(typeName, out var globalMock))
+            {
+                return globalMock;
+            }
+
             try
             {
                 var mockType = typeof(Mock<>).MakeGenericType(argType);

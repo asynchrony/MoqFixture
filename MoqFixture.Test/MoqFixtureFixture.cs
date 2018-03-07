@@ -56,6 +56,16 @@ namespace MoqFixture.Test
             Assert.AreEqual(mockOne.Object, ValidType.dependencyOne);
             Assert.AreEqual(mockTwo.Object, ValidType.dependencyTwo);
         }
+
+        [TestMethod]
+        public void Pulls_Mocks_From_Global_Store_When_Available()
+        {
+            var expectedMockOne = DefaultMocks.Mock<DependencyOne>();
+
+            var fixture = new ValidFixture();
+
+            Assert.AreEqual(expectedMockOne, fixture.GetMock<DependencyOne>());
+        }
     }
 
     class ValidFixture : MoqFixture<ValidType>
