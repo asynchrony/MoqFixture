@@ -58,13 +58,20 @@ namespace MoqFixture.Test
         }
 
         [TestMethod]
-        public void Pulls_Mocks_From_Global_Store_When_Available()
+        public void Runs_Global_Fixture_Config()
         {
-            var expectedMockOne = DefaultMocks.Mock<DependencyOne>();
+            var expectedObject = new Object();
+
+            DefaultMocks.AddSetup(f =>
+            {
+                f.Mock<DependencyOne>()
+                    .Setup(x => x.GetObject(It.IsAny<Object>()))
+                    .Returns(expectedObject);
+            });
 
             var fixture = new ValidFixture();
 
-            Assert.AreEqual(expectedMockOne, fixture.GetMock<DependencyOne>());
+            Assert.AreEqual(expectedObject, fixture.GetMock<DependencyOne>().Object.GetObject(new Object()));
         }
     }
 
@@ -123,7 +130,7 @@ namespace MoqFixture.Test
 
     public class DependencyOne
     {
-        public object GetObject(Object param)
+        public virtual object GetObject(Object param)
         {
             return new Object();
         }

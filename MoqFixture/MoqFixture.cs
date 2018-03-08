@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Castle.DynamicProxy.Generators.Emitters;
 using Moq;
 
 namespace MoqFixture
 {
-    public class MoqFixture<T> where T : class
+    public interface IMoqFixture
+    {
+        Mock<TMock> Mock<TMock>() where TMock : class;
+    }
+
+    public class MoqFixture<T> : IMoqFixture where T : class
     {
         private readonly Dictionary<string, Mock> _mocks;
         private readonly Type _testObjectType = typeof(T);
@@ -26,11 +32,12 @@ namespace MoqFixture
 
             InitMocks();
             InitTestObject();
+            DefaultMocks.SetupFixture(this);
         }
 
         protected T TestObject { get; set; }
 
-        protected Mock<TMock> Mock<TMock>() where TMock : class
+        public Mock<TMock> Mock<TMock>() where TMock : class
         {
             if (_mocks.TryGetValue(typeof(TMock).FullName, out var mock))
             {
@@ -68,13 +75,7 @@ namespace MoqFixture
         }
 
         private Mock ResolveMock(Type argType)
-        {                        
-            var typeName = argType.FullName;
-            if (DefaultMocks.Mocks.TryGetValue(typeName, out var globalMock))
-            {
-                return globalMock;
-            }
-
+        {
             try
             {
                 var mockType = typeof(Mock<>).MakeGenericType(argType);
