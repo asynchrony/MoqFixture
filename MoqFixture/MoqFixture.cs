@@ -14,6 +14,28 @@ namespace MoqFixture
 
     public class MoqFixture<T> : IMoqFixture where T : class
     {
+        private class GloballyConfigurableFixture : IMoqFixture
+        {
+            private readonly IMoqFixture _fixture;
+
+            public GloballyConfigurableFixture(IMoqFixture fixture)
+            {
+                _fixture = fixture;
+            }
+
+            public Mock<TMock> Mock<TMock>() where TMock : class
+            {
+                try
+                {
+                    return _fixture.Mock<TMock>();
+                }
+                catch (InvalidOperationException)
+                {
+                    return new Mock<TMock>();
+                }
+            }
+        }
+
         private readonly Dictionary<string, Mock> _mocks;
         private readonly Type _testObjectType = typeof(T);
         private readonly ConstructorInfo _testObjectConstructor;
@@ -32,7 +54,7 @@ namespace MoqFixture
 
             InitMocks();
             InitTestObject();
-            DefaultMocks.SetupFixture(this);
+            DefaultMocks.SetupFixture(new GloballyConfigurableFixture(this));
         }
 
         protected T TestObject { get; set; }
